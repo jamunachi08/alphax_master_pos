@@ -1,0 +1,128 @@
+{
+  "doctype": "DocType",
+  "name": "AlphaX POS Shift",
+  "module": "AlphaX Master POS",
+  "custom": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "editable_grid": 0,
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "options": "AX-POS-SHIFT-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "terminal",
+      "fieldtype": "Link",
+      "label": "Terminal",
+      "options": "AlphaX POS Terminal",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "outlet",
+      "fieldtype": "Link",
+      "label": "Outlet",
+      "options": "AlphaX POS Outlet",
+      "read_only": 1
+    },
+    {
+      "fieldname": "cashier",
+      "fieldtype": "Link",
+      "label": "Cashier",
+      "options": "User",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Open\nClosed",
+      "default": "Open",
+      "reqd": 1,
+      "in_list_view": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "opened_on",
+      "fieldtype": "Datetime",
+      "label": "Opened On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "opening_float",
+      "fieldtype": "Currency",
+      "label": "Opening Float",
+      "default": 0
+    },
+    {
+      "fieldname": "closed_on",
+      "fieldtype": "Datetime",
+      "label": "Closed On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "closing_cash_counted",
+      "fieldtype": "Currency",
+      "label": "Closing Cash Counted",
+      "default": 0
+    },
+    {
+      "fieldname": "sales_total",
+      "fieldtype": "Currency",
+      "label": "Sales Total",
+      "read_only": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "returns_total",
+      "fieldtype": "Currency",
+      "label": "Returns Total",
+      "read_only": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "net_total",
+      "fieldtype": "Currency",
+      "label": "Net Total",
+      "read_only": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "payments",
+      "fieldtype": "Table",
+      "label": "Payments Summary",
+      "options": "AlphaX POS Shift Payment",
+      "reqd": 0
+    },
+    {
+      "fieldname": "cash_denoms",
+      "fieldtype": "Table",
+      "label": "Cash Denominations",
+      "options": "AlphaX POS Cash Denomination",
+      "reqd": 0
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    }
+  ],
+  "autoname": "naming_series:AX-POS-SHIFT-.#####",
+  "naming_rule": "By 'Naming Series'"
+}

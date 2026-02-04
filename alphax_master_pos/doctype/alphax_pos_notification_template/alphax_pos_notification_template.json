@@ -1,0 +1,77 @@
+{
+  "doctype": "DocType",
+  "name": "AlphaX POS Notification Template",
+  "module": "AlphaX Master POS",
+  "custom": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "editable_grid": 0,
+  "fields": [
+    {
+      "fieldname": "template_name",
+      "fieldtype": "Data",
+      "label": "Template Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "brand",
+      "fieldtype": "Link",
+      "label": "Brand",
+      "options": "AlphaX POS Brand",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "event",
+      "fieldtype": "Select",
+      "label": "Event",
+      "options": "Sale Receipt\nReturn Receipt\nShift Close\nDay Close",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "channel",
+      "fieldtype": "Select",
+      "label": "Channel",
+      "options": "Email\nSMS\nWhatsApp",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Enabled",
+      "default": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "subject",
+      "fieldtype": "Data",
+      "label": "Subject"
+    },
+    {
+      "fieldname": "message",
+      "fieldtype": "Code",
+      "label": "Message (Jinja)",
+      "options": "Text"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    }
+  ],
+  "autoname": "field:template_name",
+  "naming_rule": "By fieldname"
+}

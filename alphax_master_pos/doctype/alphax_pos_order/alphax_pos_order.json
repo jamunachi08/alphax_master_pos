@@ -1,0 +1,130 @@
+{
+  "doctype": "DocType",
+  "name": "AlphaX POS Order",
+  "module": "AlphaX Master POS",
+  "custom": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "autoname": "naming_series:AX-POS-ORDER-.#####",
+  "naming_rule": "By 'Naming Series'",
+  "editable_grid": 0,
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "options": "AX-POS-ORD-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "terminal",
+      "fieldtype": "Link",
+      "label": "Terminal",
+      "options": "AlphaX POS Terminal",
+      "reqd": 1
+    },
+    {
+      "fieldname": "shift",
+      "fieldtype": "Link",
+      "label": "Shift",
+      "options": "AlphaX POS Shift"
+    },
+    {
+      "fieldname": "cashier",
+      "fieldtype": "Link",
+      "label": "Cashier",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "options": "Customer"
+    },
+    {
+      "fieldname": "posting_date",
+      "fieldtype": "Date",
+      "label": "Posting Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "posting_time",
+      "fieldtype": "Time",
+      "label": "Posting Time",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company"
+    },
+    {
+      "fieldname": "warehouse",
+      "fieldtype": "Link",
+      "label": "Warehouse",
+      "options": "Warehouse"
+    },
+    {
+      "fieldname": "selling_price_list",
+      "fieldtype": "Link",
+      "label": "Price List",
+      "options": "Price List"
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "update_stock",
+      "fieldtype": "Check",
+      "label": "Update Stock",
+      "default": 1
+    },
+    {
+      "fieldname": "ignore_pricing_rule",
+      "fieldtype": "Check",
+      "label": "Ignore Pricing Rule",
+      "default": 0
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Small Text",
+      "label": "Remarks"
+    },
+    {
+      "fieldname": "sales_invoice",
+      "fieldtype": "Link",
+      "label": "Sales Invoice",
+      "options": "Sales Invoice",
+      "read_only": 1
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Items",
+      "options": "AlphaX POS Order Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "payments",
+      "fieldtype": "Table",
+      "label": "Payments",
+      "options": "AlphaX POS Payment"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    }
+  ]
+}

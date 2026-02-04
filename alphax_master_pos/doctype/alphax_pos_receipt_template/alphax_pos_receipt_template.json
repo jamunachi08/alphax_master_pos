@@ -1,0 +1,87 @@
+{
+  "doctype": "DocType",
+  "name": "AlphaX POS Receipt Template",
+  "module": "AlphaX Master POS",
+  "custom": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "editable_grid": 0,
+  "fields": [
+    {
+      "fieldname": "template_name",
+      "fieldtype": "Data",
+      "label": "Template Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "brand",
+      "fieldtype": "Link",
+      "label": "Brand",
+      "options": "AlphaX POS Brand",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "template_type",
+      "fieldtype": "Select",
+      "label": "Template Type",
+      "options": "Sale\nReturn\nZ Report",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Enabled",
+      "default": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "section_html",
+      "fieldtype": "Section Break",
+      "label": "HTML"
+    },
+    {
+      "fieldname": "header_html",
+      "fieldtype": "Code",
+      "label": "Header HTML",
+      "options": "HTML"
+    },
+    {
+      "fieldname": "body_html",
+      "fieldtype": "Code",
+      "label": "Body HTML",
+      "options": "HTML"
+    },
+    {
+      "fieldname": "footer_html",
+      "fieldtype": "Code",
+      "label": "Footer HTML",
+      "options": "HTML"
+    },
+    {
+      "fieldname": "enable_zatca_qr",
+      "fieldtype": "Check",
+      "label": "Enable ZATCA QR",
+      "default": 0
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    }
+  ],
+  "autoname": "field:template_name",
+  "naming_rule": "By fieldname"
+}

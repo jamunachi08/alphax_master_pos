@@ -1,0 +1,147 @@
+{
+  "doctype": "DocType",
+  "name": "AlphaX POS Brand",
+  "module": "AlphaX Master POS",
+  "custom": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "editable_grid": 0,
+  "fields": [
+    {
+      "fieldname": "brand_name",
+      "fieldtype": "Data",
+      "label": "Brand Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Enabled",
+      "default": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "section_ui",
+      "fieldtype": "Section Break",
+      "label": "UI"
+    },
+    {
+      "fieldname": "logo_light",
+      "fieldtype": "Attach Image",
+      "label": "Logo (Light)"
+    },
+    {
+      "fieldname": "logo_dark",
+      "fieldtype": "Attach Image",
+      "label": "Logo (Dark)"
+    },
+    {
+      "fieldname": "primary_color",
+      "fieldtype": "Data",
+      "label": "Primary Color (HEX)",
+      "default": "#1f7ae0"
+    },
+    {
+      "fieldname": "secondary_color",
+      "fieldtype": "Data",
+      "label": "Secondary Color (HEX)",
+      "default": "#0b1f3b"
+    },
+    {
+      "fieldname": "accent_color",
+      "fieldtype": "Data",
+      "label": "Accent Color (HEX)",
+      "default": "#f59e0b"
+    },
+    {
+      "fieldname": "font_family",
+      "fieldtype": "Data",
+      "label": "Font Family (CSS)",
+      "default": "system-ui, -apple-system, Segoe UI, Roboto, Arial"
+    },
+    {
+      "fieldname": "section_receipt",
+      "fieldtype": "Section Break",
+      "label": "Receipt"
+    },
+    {
+      "fieldname": "legal_name",
+      "fieldtype": "Data",
+      "label": "Legal Name"
+    },
+    {
+      "fieldname": "vat_number",
+      "fieldtype": "Data",
+      "label": "VAT Number"
+    },
+    {
+      "fieldname": "cr_number",
+      "fieldtype": "Data",
+      "label": "CR Number"
+    },
+    {
+      "fieldname": "receipt_header",
+      "fieldtype": "Small Text",
+      "label": "Receipt Header"
+    },
+    {
+      "fieldname": "receipt_footer",
+      "fieldtype": "Small Text",
+      "label": "Receipt Footer"
+    },
+    {
+      "fieldname": "support_phone",
+      "fieldtype": "Data",
+      "label": "Support Phone"
+    },
+    {
+      "fieldname": "support_email",
+      "fieldtype": "Data",
+      "label": "Support Email"
+    },
+    {
+      "fieldname": "language",
+      "fieldtype": "Select",
+      "label": "Default Language",
+      "options": "\nEnglish\nArabic",
+      "default": "English"
+    },
+    {
+      "fieldname": "section_whitelabel",
+      "fieldtype": "Section Break",
+      "label": "White-Label"
+    },
+    {
+      "fieldname": "custom_domain",
+      "fieldtype": "Data",
+      "label": "Custom POS Domain (optional)"
+    },
+    {
+      "fieldname": "show_powered_by_override",
+      "fieldtype": "Select",
+      "label": "Show Powered By",
+      "options": "\nInherit Global\nYes\nNo",
+      "default": "Inherit Global"
+    },
+    {
+      "fieldname": "enable_zatca_qr",
+      "fieldtype": "Check",
+      "label": "Enable ZATCA QR on Receipt",
+      "default": 0
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    }
+  ],
+  "autoname": "field:brand_name",
+  "naming_rule": "By fieldname"
+}

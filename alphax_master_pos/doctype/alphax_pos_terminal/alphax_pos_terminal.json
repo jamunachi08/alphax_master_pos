@@ -1,0 +1,99 @@
+{
+  "doctype": "DocType",
+  "name": "AlphaX POS Terminal",
+  "module": "AlphaX Master POS",
+  "custom": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "autoname": "naming_series:AX-POS-TERMINAL-.#####",
+  "naming_rule": "By 'Naming Series'",
+  "editable_grid": 0,
+  "fields": [
+    {
+      "fieldname": "terminal_name",
+      "fieldtype": "Data",
+      "label": "Terminal Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "outlet",
+      "fieldtype": "Link",
+      "label": "Outlet",
+      "options": "AlphaX POS Outlet",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "warehouse",
+      "fieldtype": "Link",
+      "label": "Warehouse",
+      "options": "Warehouse"
+    },
+    {
+      "fieldname": "selling_price_list",
+      "fieldtype": "Link",
+      "label": "Selling Price List",
+      "options": "Price List"
+    },
+    {
+      "fieldname": "default_customer",
+      "fieldtype": "Link",
+      "label": "Default Customer",
+      "options": "Customer"
+    },
+    {
+      "fieldname": "allow_negative_stock",
+      "fieldtype": "Check",
+      "label": "Allow Negative Stock",
+      "default": 0
+    },
+    {
+      "fieldname": "section_break_devices",
+      "fieldtype": "Section Break",
+      "label": "Devices / Barcode"
+    },
+    {
+      "fieldname": "barcode_rule",
+      "fieldtype": "Link",
+      "label": "Barcode Rule",
+      "options": "AlphaX POS Barcode Rule"
+    },
+    {
+      "fieldname": "scale_value_mode_override",
+      "fieldtype": "Select",
+      "label": "Scale Mode Override",
+      "options": "\nWeight\nPrice\nBoth",
+      "default": ""
+    },
+    {
+      "fieldname": "max_discount_without_approval",
+      "fieldtype": "Percent",
+      "label": "Max Discount % Without Approval",
+      "default": 0
+    },
+    {
+      "fieldname": "brand",
+      "fieldtype": "Link",
+      "label": "Brand Override",
+      "options": "AlphaX POS Brand"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    }
+  ]
+}

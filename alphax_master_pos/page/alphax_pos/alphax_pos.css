@@ -1,0 +1,35 @@
+:root{--ax-primary:#1f7ae0;--ax-secondary:#0b1f3b;--ax-accent:#f59e0b;--ax-font:system-ui,-apple-system,Segoe UI,Roboto,Arial;}
+
+/* Retail POS UI (MVP) */
+.alphax-pos { display:flex; gap:12px; height: calc(100vh - 130px); }
+.ax-left { flex: 2.2; display:flex; flex-direction:column; gap:10px; min-width: 520px;}
+.ax-right { flex: 1; display:flex; flex-direction:column; gap:10px; min-width: 360px;}
+
+.ax-card { border:1px solid var(--border-color); border-radius:14px; padding:12px; background: var(--card-bg); }
+.ax-row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.ax-grow { flex:1; min-width: 160px; }
+
+.ax-items { display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:10px; overflow:auto; padding-right:6px; }
+.ax-item { border:1px solid var(--border-color); border-radius:14px; padding:10px; background: var(--card-bg); cursor:pointer; }
+.ax-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,.06); }
+.ax-item .code { font-size: 12px; color: var(--text-muted); }
+.ax-item .name { font-weight: 700; margin: 4px 0; }
+.ax-item .rate { font-weight: 800; }
+
+.ax-cart { overflow:auto; }
+.ax-cart table { width:100%; border-collapse:collapse; }
+.ax-cart th, .ax-cart td { border-bottom:1px solid var(--border-color); padding:8px 6px; vertical-align:middle; }
+.ax-cart th { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+.ax-qty { display:flex; gap:6px; align-items:center; }
+.ax-qty input { width:70px; text-align:center; }
+
+.ax-totalbar { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.ax-total { font-size: 20px; font-weight: 900; }
+.ax-muted { color: var(--text-muted); font-size: 12px; }
+
+.ax-shift-badge { padding:3px 8px; border:1px solid var(--border-color); border-radius:999px; font-size:12px; }
+
+/* White-label accents */
+.alphax-pos, .ax-pos { font-family: var(--ax-font); }
+.btn-primary { background: var(--ax-primary) !important; border-color: var(--ax-primary) !important; }
+.btn-success { background: var(--ax-accent) !important; border-color: var(--ax-accent) !important; }

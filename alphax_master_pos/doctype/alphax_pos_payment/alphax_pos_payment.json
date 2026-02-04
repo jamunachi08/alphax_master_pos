@@ -1,0 +1,50 @@
+{
+  "doctype": "DocType",
+  "name": "AlphaX POS Payment",
+  "module": "AlphaX Master POS",
+  "custom": 0,
+  "istable": 1,
+  "engine": "InnoDB",
+  "autoname": "",
+  "naming_rule": "",
+  "editable_grid": 1,
+  "fields": [
+    {
+      "fieldname": "mode_of_payment",
+      "fieldtype": "Link",
+      "label": "Mode of Payment",
+      "options": "Mode of Payment",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": 1,
+      "default": 0,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "reference_no",
+      "fieldtype": "Data",
+      "label": "Reference No"
+    },
+    {
+      "fieldname": "reference_date",
+      "fieldtype": "Date",
+      "label": "Reference Date"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    }
+  ]
+}

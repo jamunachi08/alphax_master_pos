@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>POS</title>
+<style>
+:root{--ax-primary:#1f7ae0;--ax-secondary:#0b1f3b;--ax-accent:#f59e0b;--ax-font:system-ui,-apple-system,Segoe UI,Roboto,Arial;}
+body{font-family:var(--ax-font);margin:0;display:flex;align-items:center;justify-content:center;height:100vh;background:linear-gradient(135deg,var(--ax-secondary),var(--ax-primary));color:#fff}
+.card{background:#00000055;border-radius:16px;padding:28px;min-width:320px;text-align:center}
+.logo img{max-height:72px;margin-bottom:12px}
+.btn{display:inline-block;margin-top:14px;padding:10px 16px;border-radius:10px;background:var(--ax-accent);color:#000;text-decoration:none;font-weight:700}
+</style>
+<script>
+async function loadBrand(){
+  const r = await fetch('/api/method/alphax_master_pos.api.get_public_brand');
+  const d = (await r.json()).message || {};
+  if(d.primary_color) document.documentElement.style.setProperty('--ax-primary', d.primary_color);
+  if(d.secondary_color) document.documentElement.style.setProperty('--ax-secondary', d.secondary_color);
+  if(d.accent_color) document.documentElement.style.setProperty('--ax-accent', d.accent_color);
+  if(d.font_family) document.documentElement.style.setProperty('--ax-font', d.font_family);
+  const logo = document.getElementById('logo');
+  if(d.logo_light){ logo.src = d.logo_light; logo.style.display='inline-block'; }
+  document.title = (d.brand_name||'POS');
+}
+window.onload=loadBrand;
+</script>
+</head>
+<body>
+  <div class="card">
+    <div class="logo"><img id="logo" style="display:none"/></div>
+    <div style="font-size:20px;font-weight:800;margin-bottom:6px">Welcome</div>
+    <div class="muted">Point of Sale</div>
+    <a class="btn" href="/app/alphax-pos">Enter POS</a>
+  </div>
+</body>
+</html>

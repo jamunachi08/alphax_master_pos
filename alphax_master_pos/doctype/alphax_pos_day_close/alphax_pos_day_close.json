@@ -1,0 +1,87 @@
+{
+  "doctype": "DocType",
+  "name": "AlphaX POS Day Close",
+  "module": "AlphaX Master POS",
+  "custom": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "editable_grid": 0,
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "options": "AX-POS-DAYCLOSE-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "outlet",
+      "fieldtype": "Link",
+      "label": "Outlet",
+      "options": "AlphaX POS Outlet",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "posting_date",
+      "fieldtype": "Date",
+      "label": "Posting Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nClosed",
+      "default": "Draft",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "closed_on",
+      "fieldtype": "Datetime",
+      "label": "Closed On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_sales",
+      "fieldtype": "Currency",
+      "label": "Total Sales",
+      "read_only": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "total_returns",
+      "fieldtype": "Currency",
+      "label": "Total Returns",
+      "read_only": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "net_total",
+      "fieldtype": "Currency",
+      "label": "Net Total",
+      "read_only": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    }
+  ],
+  "autoname": "naming_series:AX-POS-DAY-CLOSE-.#####",
+  "naming_rule": "By 'Naming Series'"
+}

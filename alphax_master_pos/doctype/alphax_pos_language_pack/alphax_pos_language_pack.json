@@ -1,0 +1,70 @@
+{
+  "doctype": "DocType",
+  "name": "AlphaX POS Language Pack",
+  "module": "AlphaX Master POS",
+  "custom": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "editable_grid": 0,
+  "fields": [
+    {
+      "fieldname": "pack_name",
+      "fieldtype": "Data",
+      "label": "Pack Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "brand",
+      "fieldtype": "Link",
+      "label": "Brand",
+      "options": "AlphaX POS Brand",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "language",
+      "fieldtype": "Select",
+      "label": "Language",
+      "options": "English\nArabic",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Enabled",
+      "default": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "is_rtl",
+      "fieldtype": "Check",
+      "label": "RTL",
+      "default": 0
+    },
+    {
+      "fieldname": "translations_json",
+      "fieldtype": "Code",
+      "label": "Translations JSON",
+      "options": "JSON"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    }
+  ],
+  "autoname": "field:pack_name",
+  "naming_rule": "By fieldname"
+}
