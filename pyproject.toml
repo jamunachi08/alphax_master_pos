@@ -9,12 +9,14 @@ description = "Sector-agnostic Master POS platform for ERPNext / Frappe"
 readme = "README.md"
 requires-python = ">=3.10"
 dynamic = ["version"]
-dependencies = [
-  "frappe>=15.0.0",
-]
+dependencies = []
 
 [project.urls]
-Home = "https://github.com/<your-org>/alphax_master_pos"
+Home = "https://github.com/jamunachi08/alphax_master_pos"
 
 [tool.flit.module]
 name = "alphax_master_pos"
+
+[tool.bench.frappe-dependencies]
+frappe = ">=15,<16"
+erpnext = ">=15,<16"
